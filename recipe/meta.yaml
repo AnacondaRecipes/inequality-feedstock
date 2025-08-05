@@ -30,13 +30,18 @@ requirements:
     - scipy >=1.12
 
 test:
+  source_files:
+    - inequality/tests
   imports:
     - inequality
   requires:
     - pip
+    - pytest
+    - seaborn
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -vv inequality/tests
 
 about:
   home: https://github.com/pysal/inequality
