@@ -32,6 +32,11 @@ requirements:
 test:
   imports:
     - inequality
+  requires:
+    - pip
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
 
 about:
   home: https://github.com/pysal/inequality
