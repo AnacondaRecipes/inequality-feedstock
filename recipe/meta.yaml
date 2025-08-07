@@ -49,7 +49,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: Spatial inequality analysis for PySAL A library of spatial analysis functions.
+  summary: Spatial inequality analysis for PySAL.
   description: |
     inequality implements measures for the analysis of inequality over space and time and is
     part of the PySAL family.
