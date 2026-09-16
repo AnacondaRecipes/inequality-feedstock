@@ -1,16 +1,16 @@
 {% set name = "inequality" %}
-{% set version = "1.1.2" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2010253c26cfe3745d36beb02aeff5503e1b21cb06e1d52aa7f13c37acd9adf1
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: acdfb22513cf278ee273942d71e0a6a1ba40e1da4a9e0a657cb1a032df3eb646
 
 build:
-  skip: true  # [py<311]
+  skip: true  # [py<312]
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vvv
 
@@ -21,14 +21,16 @@ requirements:
     - setuptools >=61.0
     - setuptools_scm >=6.2
     - toml
-    - wheel
+    - setuptools-scm >=6.2
   run:
     - python
     - libpysal >=4.12
-    - matplotlib-base >=3.8
-    - numpy >=1.26
-    - pandas >=2.1
-    - scipy >=1.12
+    - matplotlib-base >=3.10
+    - numpy >=2.0
+    - pandas >=2.3
+    - scipy >=1.14
+    - joblib
+    - tqdm
 
 test:
   source_files:
