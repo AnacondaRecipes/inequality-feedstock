@@ -21,7 +21,6 @@ requirements:
     - setuptools >=61.0
     - setuptools_scm >=6.2
     - toml
-    - setuptools-scm >=6.2
   run:
     - python
     - libpysal >=4.12
